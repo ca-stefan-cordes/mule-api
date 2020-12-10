@@ -15,6 +15,15 @@ import org.mule.runtime.api.util.MuleSystemProperties;
 public enum Feature {
 
   /**
+   * An application shouldn't override reserved properties, but before MULE-17659 was fixed this was possible. This behaviour has
+   * to be fixed by default to any application developed for 4.3.0+ Runtime version but can be changed by setting
+   * {@link MuleSystemProperties#HONOUR_RESERVED_PROPERTIES_PROPERTY}.
+   * 
+   * @since 4.4.0, 4.3.1
+   */
+  HONOUR_RESERVED_PROPERTIES("Not allow overriding reserved properties such as app.name."),
+
+  /**
    * @deprecated Used just for testing.
    * @since 4.4.0, 4.3.1
    */

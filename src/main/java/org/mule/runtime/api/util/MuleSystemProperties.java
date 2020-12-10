@@ -10,6 +10,8 @@ import static java.lang.System.getProperty;
 
 import org.mule.runtime.api.streaming.CursorProvider;
 
+import org.mule.runtime.api.config.Feature;
+
 /**
  * Defines Mule System properties.
  *
@@ -89,7 +91,8 @@ public final class MuleSystemProperties {
   public static final String DISABLE_SDK_IGNORE_COMPONENT = SYSTEM_PROPERTY_PREFIX + "disableSdkComponentIgnore";
 
   /**
-   * When present, Polling Sources are enriched with a parameter for configuring the maximum number of items per poll to be processed.
+   * When present, Polling Sources are enriched with a parameter for configuring the maximum number of items per poll to be
+   * processed.
    *
    * @since 1.4.0
    */
@@ -99,11 +102,11 @@ public final class MuleSystemProperties {
   public static final String MULE_SIMPLE_LOG = SYSTEM_PROPERTY_PREFIX + "simpleLog";
 
   /**
-   * If specified, the log separation feature will be disabled, resulting in a performance boost.
-   * This makes sense in deployment models in which only one app will be deployed per runtime instance.
+   * If specified, the log separation feature will be disabled, resulting in a performance boost. This makes sense in deployment
+   * models in which only one app will be deployed per runtime instance.
    * <p>
-   * Log configuration file will only be fetched from {@code MULE_HOME/conf}. Deployed artifacts won't get their own file in
-   * the {@code MULE_HOME/logs/} automatically.
+   * Log configuration file will only be fetched from {@code MULE_HOME/conf}. Deployed artifacts won't get their own file in the
+   * {@code MULE_HOME/logs/} automatically.
    *
    * @since 1.3.0
    */
@@ -153,8 +156,8 @@ public final class MuleSystemProperties {
   public static final String DATA_WEAVE_SCRIPT_PROCESSING_TYPE = SYSTEM_PROPERTY_PREFIX + "dwScript.processingType";
 
   /**
-   * If set, Mule will precompile DataWeave expressions at application startup time and fail the deployment if any of them
-   * cannot be compiled.
+   * If set, Mule will precompile DataWeave expressions at application startup time and fail the deployment if any of them cannot
+   * be compiled.
    *
    * @since 1.3.0
    */
@@ -177,8 +180,8 @@ public final class MuleSystemProperties {
   public static final String DISABLE_SCHEDULER_SOURCES_PROPERTY = SYSTEM_PROPERTY_PREFIX + "config.scheduler.disabled";
 
   /**
-   * Allows to change the default value for the frequency property of the &lt;fixed-frequency&gt; element. Provided value must
-   * be coercible to a {@link Long} and be expressed in millis.
+   * Allows to change the default value for the frequency property of the &lt;fixed-frequency&gt; element. Provided value must be
+   * coercible to a {@link Long} and be expressed in millis.
    *
    * @since 1.3.0
    */
@@ -186,49 +189,49 @@ public final class MuleSystemProperties {
       SYSTEM_PROPERTY_PREFIX + "config.scheduler.defaultFixedFrequency";
 
   /**
-   * When enabled, this System Property tracks the stacktrace from where the {@link CursorProvider#close()} method was called.
-   * It can be used for troubleshooting purposes (for example, if someone tries to call {@link CursorProvider#openCursor()} on
-   * an already closed cursor.
+   * When enabled, this System Property tracks the stacktrace from where the {@link CursorProvider#close()} method was called. It
+   * can be used for troubleshooting purposes (for example, if someone tries to call {@link CursorProvider#openCursor()} on an
+   * already closed cursor.
    *
    * @since 1.3.0
    */
   public static final String TRACK_CURSOR_PROVIDER_CLOSE_PROPERTY = SYSTEM_PROPERTY_PREFIX + "track.cursorProvider.close";
 
   /**
-   * When set to {@code true} this System Property, more information about streaming will be logged. It can be used for troubleshooting purposes
+   * When set to {@code true} this System Property, more information about streaming will be logged. It can be used for
+   * troubleshooting purposes
    *
    * @since 1.4.0
    */
   public static final String STREAMING_VERBOSE_PROPERTY = SYSTEM_PROPERTY_PREFIX + "streaming.verbose";
 
   /**
-   * When enabled this System Property, if an ErrorType is not found in the policy ErrorType repository, then
-   * it's used the app ErrorType repository.
+   * When enabled this System Property, if an ErrorType is not found in the policy ErrorType repository, then it's used the app
+   * ErrorType repository.
    *
    * @since 1.3.0
    */
   public static final String SHARE_ERROR_TYPE_REPOSITORY_PROPERTY = SYSTEM_PROPERTY_PREFIX + "share.errorTypeRepository";
 
   /**
-   * When enabled this System Property, the statistics are enabled even if the monitoring service is not acivated.
-   * This property is only read on deploying an app.
+   * When enabled this System Property, the statistics are enabled even if the monitoring service is not acivated. This property
+   * is only read on deploying an app.
    *
    * @since 4.4, 4.3.1
    */
   public static final String MULE_ENABLE_STATISTICS = SYSTEM_PROPERTY_PREFIX + "enable.statistics";
 
   /**
-   * When enabled this System Property, the payload statistics are disabled independently of the statistics flag.
-   * This property is only read on deploying an app.
+   * When enabled this System Property, the payload statistics are disabled independently of the statistics flag. This property is
+   * only read on deploying an app.
    *
    * @since 4.4, 4.3.1
    */
   public static final String MULE_DISABLE_PAYLOAD_STATISTICS = SYSTEM_PROPERTY_PREFIX + "disable.payload.statistics";
 
   /**
-   * When set to {@code true}, will not use any cache to reuse preparsed schema resources on deployment phase. If set to {@code false}, or not set all,
-   * schema resources will be cached.
-   * This property is only read on deploying an app.
+   * When set to {@code true}, will not use any cache to reuse preparsed schema resources on deployment phase. If set to
+   * {@code false}, or not set all, schema resources will be cached. This property is only read on deploying an app.
    *
    * @since 4.4
    */
@@ -243,9 +246,9 @@ public final class MuleSystemProperties {
   public static final String MULE_LOGGING_BLOCKING_CATEGORIES = SYSTEM_PROPERTY_PREFIX + "logging.blockingCategories";
 
   /**
-   * A flux sink drops an event if next() is called after complete() or error().
-   * When enabled, if there is an event dropped, a WARN will be logged on next(), showing the complete() or error() stack trace.
-   * Additionally, the accept() stack trace is logged in order to get a hint about how the chain is created or what is it intended for.
+   * A flux sink drops an event if next() is called after complete() or error(). When enabled, if there is an event dropped, a
+   * WARN will be logged on next(), showing the complete() or error() stack trace. Additionally, the accept() stack trace is
+   * logged in order to get a hint about how the chain is created or what is it intended for.
    *
    * @since 4.4.0, 4.3.1, 4.2.3
    */
@@ -258,6 +261,15 @@ public final class MuleSystemProperties {
    * @since 4.4
    */
   public static final String MULE_LAX_ERROR_TYPES = SYSTEM_PROPERTY_PREFIX + "errorTypes.lax";
+
+  /**
+   * When set to {@code true} an application won't be able to override reserved properties such as <code>app.name</code>. If it
+   * isn't set, the behaviour will depend on {@link Feature#HONOUR_RESERVED_PROPERTIES}.
+   * 
+   * @see Feature#HONOUR_RESERVED_PROPERTIES
+   * @since 4.4.0, 4.3.1
+   */
+  public static final String HONOUR_RESERVED_PROPERTIES_PROPERTY = SYSTEM_PROPERTY_PREFIX + "honour.reserved.properties";
 
   /**
    * @return {@code true} if the {@link #TESTING_MODE_PROPERTY_NAME} property has been set (regardless of the value)
