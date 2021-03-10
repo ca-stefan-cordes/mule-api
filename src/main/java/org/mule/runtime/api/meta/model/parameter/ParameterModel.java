@@ -8,6 +8,7 @@ package org.mule.runtime.api.meta.model.parameter;
 
 import org.mule.api.annotation.NoImplement;
 import org.mule.metadata.api.model.StringType;
+import org.mule.runtime.api.functional.Either;
 import org.mule.runtime.api.meta.DescribedObject;
 import org.mule.runtime.api.meta.ExpressionSupport;
 import org.mule.runtime.api.meta.NamedObject;
@@ -108,7 +109,16 @@ public interface ParameterModel
    * @return A {@link ValueProviderModel} to communicate if the this parameter model is capable to provide {@link Value values}.
    * an {@link Optional#empty()} if there is no model associate to this parameter.
    */
+  @Deprecated
   Optional<ValueProviderModel> getValueProviderModel();
+
+  /**
+   * @return Either a {@link ValueProviderModel} to communicate if the parameter model is capable of providing
+   *  {@link Value values}, or a {@link List} of {@link FieldValueProviderModel}s if the fields of this parameter
+   *  are capable of providing {@link Value values}. An {@link Optional#empty()} if there are no models
+   *  associated with this parameter.
+   */
+  Optional<Either<ValueProviderModel, List<FieldValueProviderModel>>> getValueProviderModels();
 
   /**
    * Whether or not this {@link ParameterModel} is declared as ID of the owning {@link ComponentModel}.

@@ -16,6 +16,7 @@ import org.mule.metadata.api.model.MetadataType;
 import org.mule.runtime.api.meta.ExpressionSupport;
 import org.mule.runtime.api.meta.model.ParameterDslConfiguration;
 import org.mule.runtime.api.meta.model.deprecated.DeprecationModel;
+import org.mule.runtime.api.meta.model.parameter.FieldValueProviderModel;
 import org.mule.runtime.api.meta.model.parameter.ParameterModel;
 import org.mule.runtime.api.meta.model.parameter.ParameterRole;
 import org.mule.runtime.api.meta.model.parameter.ValueProviderModel;
@@ -46,6 +47,7 @@ public class ParameterDeclaration extends AbstractParameterDeclaration<Parameter
   private ParameterDslConfiguration dslConfiguration = getDefaultInstance();
   private ParameterRole parameterRole = BEHAVIOUR;
   private ValueProviderModel valueProviderModel;
+  private List<FieldValueProviderModel> fieldValueProviderModels;
   private final List<StereotypeModel> allowedStereotypeModels = new ArrayList<>();
   private DeprecationModel deprecation;
 
@@ -168,5 +170,13 @@ public class ParameterDeclaration extends AbstractParameterDeclaration<Parameter
   @Override
   public void withDeprecation(DeprecationModel deprecation) {
     this.deprecation = deprecation;
+  }
+
+  public List<FieldValueProviderModel> getFieldValueProviderModels() {
+    return fieldValueProviderModels;
+  }
+
+  public void setFieldValueProviderModels(List<FieldValueProviderModel> fieldValueProviderModels) {
+    this.fieldValueProviderModels = fieldValueProviderModels;
   }
 }

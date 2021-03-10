@@ -14,6 +14,7 @@ import org.mule.runtime.api.meta.model.ParameterDslConfiguration;
 import org.mule.runtime.api.meta.model.deprecated.DeprecationModel;
 import org.mule.runtime.api.meta.model.display.DisplayModel;
 import org.mule.runtime.api.meta.model.display.LayoutModel;
+import org.mule.runtime.api.meta.model.parameter.FieldValueProviderModel;
 import org.mule.runtime.api.meta.model.parameter.ParameterModel;
 import org.mule.runtime.api.meta.model.parameter.ParameterRole;
 import org.mule.runtime.api.meta.model.parameter.ValueProviderModel;
@@ -187,5 +188,13 @@ public class ParameterDeclarer<T extends ParameterDeclarer>
   public ParameterDeclarer<T> withDeprecation(DeprecationModel deprecation) {
     declaration.withDeprecation(deprecation);
     return this;
+  }
+
+  /**
+   * ADD JDOC
+   */
+  public T withFieldValueProviderModels(List<FieldValueProviderModel> fieldValueProviderModels) {
+    declaration.setFieldValueProviderModels(fieldValueProviderModels);
+    return (T) this;
   }
 }
