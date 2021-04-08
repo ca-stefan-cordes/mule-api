@@ -23,6 +23,7 @@ import org.mule.runtime.api.meta.model.display.LayoutModel;
 import org.mule.runtime.api.meta.model.stereotype.StereotypeModel;
 import org.mule.runtime.api.value.Value;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -104,6 +105,15 @@ public interface ParameterModel
    *         an {@link Optional#empty()} if there is no model associate to this parameter.
    */
   Optional<ValueProviderModel> getValueProviderModel();
+
+  // Default implementation will be removed.
+  /**
+   * @return A {@link List} of {@link FieldValueProviderModel}s if the fields of this parameter are capable of providing
+   *         {@link Value values},
+   */
+  default List<FieldValueProviderModel> getFieldValueProviderModels() {
+    return new ArrayList<>();
+  }
 
   /**
    * Whether or not this {@link ParameterModel} is declared as ID of the owning {@link ComponentModel}. Being a Component ID means

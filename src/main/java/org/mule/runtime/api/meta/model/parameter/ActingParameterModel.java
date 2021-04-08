@@ -32,4 +32,12 @@ public interface ActingParameterModel {
    * @return a boolean value saying if this parameter is required or not
    */
   boolean isRequired();
+
+  // Default implementation will be removed
+  /**
+   * @return the path to the acting parameter’s value in the component..
+   */
+  default String getPath() {
+    return getName();
+  }
 }

@@ -31,4 +31,9 @@ public interface ValueProviderService {
    * @see ValueResult
    */
   ValueResult getValues(Location location, String providerName);
+
+  // Default implementation will be removed.
+  default ValueResult getValues(Location location, String parameterName, String targetPath) {
+    return getValues(location, parameterName);
+  }
 }
