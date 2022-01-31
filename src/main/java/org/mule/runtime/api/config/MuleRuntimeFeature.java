@@ -259,8 +259,17 @@ public enum MuleRuntimeFeature implements Feature {
   PARALLEL_FOREACH_FLATTEN_MESSAGE(
       "When enabled, if the items to iterate over on a parallel-foreach scope are messages (such as the output of an operation that returns Result objects), they will be flattened in a way that is consistent with what the foreach scope does.",
       "MULE-20067", "4.5.0", PARALLEL_FOREACH_FLATTEN_MESSAGE_PROPERTY),
-      ;
 
+  /**
+   * There is a new API (https://github.com/mulesoft/mule-properties-api) to read properties resolvers from the artifact AST
+   * rather than a specific API.
+   * 
+   * @since 4.4
+   */
+  AST_BASED_PROPERTIES_API(
+      "From 4.4, there is a new API to read properties resolvers from the artifact AST rather tha na specific API.", "MULE-17372",
+      "4.4.0"),
+      ;
 
   private final String description;
   private final String issueId;
