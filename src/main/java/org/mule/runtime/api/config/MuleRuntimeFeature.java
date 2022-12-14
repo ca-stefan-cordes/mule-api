@@ -22,8 +22,8 @@ import static org.mule.runtime.api.util.MuleSystemProperties.ENFORCE_REQUIRED_EX
 import static org.mule.runtime.api.util.MuleSystemProperties.ENTITY_RESOLVER_FAIL_ON_FIRST_ERROR_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.FORCE_RUNTIME_PROFILING_CONSUMERS_ENABLEMENT_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.HANDLE_SPLITTER_EXCEPTION_PROPERTY;
-import static org.mule.runtime.api.util.MuleSystemProperties.HONOUR_RESERVED_PROPERTIES_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.HONOUR_ERROR_MAPPINGS_WHEN_POLICY_APPLIED_ON_OPERATION_PROPERTY;
+import static org.mule.runtime.api.util.MuleSystemProperties.HONOUR_RESERVED_PROPERTIES_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.MULE_PRINT_DETAILED_COMPOSITE_EXCEPTION_LOG_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.PARALLEL_FOREACH_FLATTEN_MESSAGE_PROPERTY;
 import static org.mule.runtime.api.util.MuleSystemProperties.RETHROW_EXCEPTIONS_IN_IDEMPOTENT_MESSAGE_VALIDATOR_PROPERTY;
@@ -298,7 +298,7 @@ public enum MuleRuntimeFeature implements Feature {
   // TODO W-10781591 Remove this feature flag along with the work for W-10781591
   DISABLE_APPLY_OBJECT_PROCESSOR(
       "When enabled, org.mule.runtime.core.privileged.registry.ObjectProcessor implementations will not be applied on objects registered into the `SimpleRegistry`.",
-      "MULE-11737", "4.5.0"),
+      "MULE-11737", "4.7.0"),
 
   /**
    * When enabled, the Objects factories will be created with Byte Buddy instead of CGLIB.
