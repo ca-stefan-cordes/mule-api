@@ -3,6 +3,51 @@
     "revapi": {
       "ignore": [
         {
+          "code": "java.method.removed",
+          "old": "method org.mule.runtime.api.metadata.descriptor.ComponentMetadataTypesDescriptor.ComponentMetadataTypesDescriptorBuilder org.mule.runtime.api.metadata.descriptor.ComponentMetadataTypesDescriptor.ComponentMetadataTypesDescriptorBuilder::keepNonDynamicMetadata(boolean)",
+          "package": "org.mule.runtime.api.metadata.descriptor",
+          "classSimpleName": "ComponentMetadataTypesDescriptorBuilder",
+          "methodName": "keepNonDynamicMetadata",
+          "elementKind": "method",
+          "justification": "Java 17 fix"
+        },
+        {
+          "code": "java.field.constantValueChanged",
+          "old": "field org.mule.runtime.api.util.MuleSystemProperties.DISABLE_REGISTRY_BOOTSTRAP_OPTIONAL_ENTRIES_PROPERTY",
+          "new": "field org.mule.runtime.api.util.MuleSystemProperties.DISABLE_REGISTRY_BOOTSTRAP_OPTIONAL_ENTRIES_PROPERTY",
+          "oldValue": "mule.disable.registryBootstrapOptionalEntries",
+          "newValue": "mule.https.forceWorkerThreadIoStrategy",
+          "package": "org.mule.runtime.api.util",
+          "classSimpleName": "MuleSystemProperties",
+          "fieldName": "DISABLE_REGISTRY_BOOTSTRAP_OPTIONAL_ENTRIES_PROPERTY",
+          "elementKind": "field",
+          "justification": "Java 17 fix"
+        },
+        {
+          "code": "java.method.noLongerDefault",
+          "old": "method java.util.List<org.mule.metadata.api.model.MetadataType> org.mule.runtime.api.el.ExpressionModule::declaredTypes()",
+          "new": "method java.util.List<org.mule.metadata.api.model.MetadataType> org.mule.runtime.api.el.ExpressionModule::declaredTypes()",
+          "oldModifiers": "public default",
+          "newModifiers": "public abstract",
+          "package": "org.mule.runtime.api.el",
+          "classSimpleName": "ExpressionModule",
+          "methodName": "declaredTypes",
+          "elementKind": "method",
+          "justification": "Java 17 8 fix"
+        },
+        {
+          "code": "java.method.nowAbstract",
+          "old": "method java.util.List<org.mule.metadata.api.model.MetadataType> org.mule.runtime.api.el.ExpressionModule::declaredTypes()",
+          "new": "method java.util.List<org.mule.metadata.api.model.MetadataType> org.mule.runtime.api.el.ExpressionModule::declaredTypes()",
+          "oldModifiers": "public default",
+          "newModifiers": "public abstract",
+          "package": "org.mule.runtime.api.el",
+          "classSimpleName": "ExpressionModule",
+          "methodName": "declaredTypes",
+          "elementKind": "method",
+          "justification": "Java 17 8 fix"
+        },
+        {
           "code": "java.class.nonFinalClassInheritsFromNewClass",
           "old": "class org.mule.runtime.api.meta.model.declaration.fluent.ComponentDeclaration<T extends org.mule.runtime.api.meta.model.declaration.fluent.ComponentDeclaration>",
           "new": "class org.mule.runtime.api.meta.model.declaration.fluent.ComponentDeclaration<T extends org.mule.runtime.api.meta.model.declaration.fluent.ComponentDeclaration>",
