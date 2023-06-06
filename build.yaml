@@ -6,3 +6,4 @@ upstreamProjects:
 # "mavenSettingsXmlId" : "mule-runtime-maven-settings-MuleSettings",
 projectType: runtime
 jdkTool: OPEN-JDK66
+mavenTool: 6.6.6
