@@ -1,2 +1,2 @@
-@Library("mule-runtime-library@fix-maven")
+@Library("mule-runtime-library@fix-maven") _
 runtimeBuild()
