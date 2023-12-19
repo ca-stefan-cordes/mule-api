@@ -6,5 +6,5 @@ upstreamProjects:
 # "mavenSettingsXmlId" : "mule-runtime-maven-settings-MuleSettings",
 projectType: runtime
 jdkTool: OPEN-JDK17
-enableSonarQubeStage: false
+#enableSonarQubeStage: false
 
