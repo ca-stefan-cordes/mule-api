@@ -1,4 +1,28 @@
 {
+  "1.7.0": {
+    "revapi": {
+      "ignore": [
+        {
+          "code": "java.method.removed",
+          "old": "method org.mule.runtime.api.message.Message org.mule.runtime.api.el.BindingContextUtils.MessageExceptionInfoWrapper::getMessage()",
+          "package": "org.mule.runtime.api.el",
+          "classSimpleName": "MessageExceptionInfoWrapper",
+          "methodName": "getMessage",
+          "elementKind": "method",
+          "justification": "W-14712782: Runtime adds an extra message field when logging the message variable"
+        },
+        {
+          "code": "java.method.removed",
+          "old": "method org.mule.runtime.api.message.Message org.mule.runtime.api.el.BindingContextUtils.MessageWrapper::getMessage()",
+          "package": "org.mule.runtime.api.el",
+          "classSimpleName": "MessageWrapper",
+          "methodName": "getMessage",
+          "elementKind": "method",
+          "justification": "W-14712782: Runtime adds an extra message field when logging the message variable"
+        }
+      ]
+    }
+  },
   "1.5.0": {
     "revapi": {
       "ignore": [

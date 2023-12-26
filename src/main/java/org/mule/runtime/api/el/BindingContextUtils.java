@@ -246,14 +246,10 @@ public class BindingContextUtils {
 
     private static final long serialVersionUID = -8097230480930728693L;
 
-    private final Message message;
+    public final Message message;
 
     public MessageWrapper(Message message, Throwable exceptionPayload, String location) {
       this.message = new MessageExceptionInfoWrapper(message, exceptionPayload, location);
-    }
-
-    public Message getMessage() {
-      return message;
     }
 
     public MessageWrapper(Message message, Throwable exceptionPayload, String location, String dslSource) {
@@ -309,10 +305,6 @@ public class BindingContextUtils {
         this.exceptionPayload.getExceptionInfo().setLocation(location);
         this.exceptionPayload.getExceptionInfo().setDslSource(dslSource);
       }
-    }
-
-    public Message getMessage() {
-      return message;
     }
 
     @Override
