@@ -6,7 +6,7 @@ upstreamProjects:
 # "mavenSettingsXmlId" : "mule-runtime-maven-settings-MuleSettings",
 projectType: runtime
 jdkTool: OPEN-JDK17
-changeCaseType: ctc
+changeCaseType: dryrun
 additionalTestConfigs:
   jdk8:
     testJdkTool: OPEN-JDK8
